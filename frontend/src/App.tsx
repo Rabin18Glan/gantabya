@@ -1,23 +1,27 @@
-import React from 'react'
-import { useAppSelector } from './store/hooks'
-import { createTheme, CssBaseline } from '@mui/material'
-import { ThemeProvider } from 'styled-components'
-import { RouterProvider } from 'react-router-dom'
-import router from './Routes'
-import getDesignTokens from './assets/theme'
+
+import { createTheme, CssBaseline } from '@mui/material';
+import { amber, deepOrange, grey } from '@mui/material/colors';
+import { ThemeProvider } from 'styled-components';
+import { BrowserRouter as Router, RouterProvider } from 'react-router-dom'; // Changed from RouterProvider to BrowserRouter
+import router from './Routes';
+import { useAppSelector } from './store/hooks';
 
 function App() {
-    const mode = useAppSelector(state=>state.mode.mode)
+    const mode = useAppSelector(state => state.mode.mode);
 
-  // Update the theme only if the mode changes
-  const theme = React.useMemo(() => createTheme(getDesignTokens(mode)), [mode]);
-  
-  return (
-    <ThemeProvider theme={theme}>
-        <CssBaseline />
-           <RouterProvider router={router} />
-    </ThemeProvider>
-  )
+    // Create the theme based on the mode
+    const theme = createTheme({
+        palette: {
+            mode},
+    });
+
+    return (
+        <ThemeProvider theme={theme}>
+            <CssBaseline />
+           
+            <RouterProvider router={router} />
+        </ThemeProvider>
+    );
 }
 
-export default App
+export default App;
