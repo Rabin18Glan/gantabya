@@ -9,21 +9,24 @@ import Typography from '@mui/material/Typography';
 
 import MailIcon from '@mui/icons-material/Mail';
 import NotificationsIcon from '@mui/icons-material/Notifications';
-import { Avatar } from '@mui/material';
+import { Avatar,  useMediaQuery } from '@mui/material';
 
 import ModeSwitch from './ModeSwitch';
 import { Search } from './Search';
 import AccountMenu from './Menu';
 import Navigations from './Navigations';
+import { List } from '@mui/icons-material';
 
 
 
 function Header() {
+  const matches = useMediaQuery('max-width:1000');
+
 
   return (
-    <>
+ 
 
-      <Box sx={{ flexGrow: 1 }}>
+      <Box sx={{ flexGrow: 1,width:'100%' }}>
         <AppBar position="static" sx={{ backgroundColor: 'background.default' }}>
           <Toolbar sx={{ display:'flex',alignItems:'center',justifyContent:'space-between'  }}>
             {/* <IconButton
@@ -39,11 +42,13 @@ function Header() {
             <Box sx={{ display: 'flex', alignItems: 'center' }}> 
                <Avatar > <img src='logo.jpeg' /></Avatar>
                <Search />
+
+               {matches&&<IconButton><List/></IconButton>}
             </Box>
 <Navigations  />
 
             {/* <Box sx={{ flexGrow: 1 }} /> */}
-            <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
+            <Box sx={{ display: {  md: 'flex' } }}>
               <IconButton size="large" aria-label="show 4 new mails" color="default">
                 <Badge badgeContent={4} color="error">
                   <MailIcon />
@@ -68,6 +73,6 @@ function Header() {
 
       </Box>
 
-    </>
+
   );
 }

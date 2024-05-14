@@ -1,5 +1,5 @@
 import { BedtimeOutlined, BedtimeRounded, Brightness2Rounded, Brightness7Rounded } from '@mui/icons-material'
-import { IconButton, useMediaQuery } from '@mui/material'
+import { Box, IconButton, useMediaQuery } from '@mui/material'
 import React, { useEffect } from 'react'
 import { useAppDispatch, useAppSelector } from '../../store/hooks'
 import { toggle } from '../../store/slices/colorMode'
@@ -25,10 +25,9 @@ const dispatch = useAppDispatch();
   },[prefersDarkMode])
   return (
  
-      <IconButton onClick={handleSwitch} sx={{ position:'fixed',right:'10px',top:'70px' }}>
-{  colorMode=='dark'?    <BedtimeRounded sx={{fontSize:'60px',color:grey[800],}}/>:<BrightnessHighRoundedIcon sx={{fontSize:'60px'}}/>}
-      </IconButton>
-  
+    <IconButton  onClick={handleSwitch} sx={{ position:'fixed',right:'10px',top:'70px',backgroundColor:'orange',":hover":'background'}}>
+    {  colorMode=='dark'?<BedtimeRounded sx={{fontSize:'40px',color:'whitesmoke',}}/>:<BrightnessHighRoundedIcon sx={{fontSize:'40px',color:'whitesmoke'}}/>}
+          </IconButton>
   )
 }
 

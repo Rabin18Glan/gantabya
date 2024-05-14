@@ -5,12 +5,15 @@ import PhoneIcon from '@mui/icons-material/Phone';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import PersonPinIcon from '@mui/icons-material/PersonPin';
 import { HomeMaxRounded, SlowMotionVideoRounded, TourRounded, TravelExploreRounded, VideoFileRounded } from '@mui/icons-material';
-import { Tooltip } from '@mui/material';
+import { ThemeOptions, Tooltip, useMediaQuery } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
+import { Theme, useTheme } from '@emotion/react';
 
 export default function Navigations() {
   const [page, setPage] = React.useState(0);
   const navigate = useNavigate()
+  const theme = useTheme();
+
 
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
     setPage(newValue)
@@ -30,7 +33,7 @@ export default function Navigations() {
   };
 
   return (
-    <Tabs sx={{ justifySelf:'center' }} value={page} onChange={handleChange} aria-label="icon tabs example">
+    <Tabs sx={{ display: { xs: 'none', md: 'flex' },justifySelf:'center' }} value={page} onChange={handleChange} aria-label="icon tabs example">
     
 <Tooltip title="home" enterDelay={500} leaveDelay={200} > 
      <Tab icon={<HomeMaxRounded />}  aria-label="home" />

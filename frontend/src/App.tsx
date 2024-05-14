@@ -10,17 +10,11 @@ function App() {
     const mode = useAppSelector(state => state.mode.mode);
 
     // Create the theme based on the mode
-    const theme = createTheme({
-        palette: {
-            mode},
-    });
+
 
     return (
-        <ThemeProvider theme={theme}>
-            <CssBaseline />
-           
-            <RouterProvider router={router} />
-        </ThemeProvider>
+      
+         <RouterProvider router={router} />
     );
 }
 

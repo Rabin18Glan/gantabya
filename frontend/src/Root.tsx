@@ -16,7 +16,7 @@ const theme = createTheme(getDesignTokens(mode));
 
       <ThemeProvider theme={theme}>
       <Header />
-   <Outlet />
+   <Outlet  />
       </ThemeProvider>
   
   );
