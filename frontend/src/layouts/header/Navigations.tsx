@@ -1,18 +1,13 @@
-import * as React from 'react';
-import Tabs from '@mui/material/Tabs';
+import { HomeMaxRounded, SlowMotionVideoRounded, TourRounded, TravelExploreRounded } from '@mui/icons-material';
+import { Tooltip } from '@mui/material';
 import Tab from '@mui/material/Tab';
-import PhoneIcon from '@mui/icons-material/Phone';
-import FavoriteIcon from '@mui/icons-material/Favorite';
-import PersonPinIcon from '@mui/icons-material/PersonPin';
-import { HomeMaxRounded, SlowMotionVideoRounded, TourRounded, TravelExploreRounded, VideoFileRounded } from '@mui/icons-material';
-import { ThemeOptions, Tooltip, useMediaQuery } from '@mui/material';
+import Tabs from '@mui/material/Tabs';
+import * as React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Theme, useTheme } from '@emotion/react';
 
 export default function Navigations() {
   const [page, setPage] = React.useState(0);
   const navigate = useNavigate()
-  const theme = useTheme();
 
 
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {

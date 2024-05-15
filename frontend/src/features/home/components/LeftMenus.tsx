@@ -18,14 +18,14 @@ const data = [
 export default function CustomizedList() {
 
   return (
-    <Grid item xs sx={{ backgroundColor: 'background.default',height:'91vh',}}>
+    <Grid item xs={3} sx={{ backgroundColor: 'background.default',height:'91vh',}}>
 
-<List sx={{ display:'flex',flexDirection:'column' }}>
+<List sx={{ display:'flex',flexDirection:'column',padding:'10px', }}>
 {data.map((item) => (
         <ListItemButton
         
           key={item.label}
-          sx={{  minHeight: 32, color: 'text.primary',padding:'10px', py:'20px'  }}
+          sx={{  minHeight: 32, color: 'text.primary',padding:'10px',borderRadius:'10px' }}
         >
           <ListItemIcon sx={{ color: 'default' }}>
             {item.icon}

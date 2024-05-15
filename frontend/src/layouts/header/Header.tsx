@@ -1,21 +1,19 @@
 export default Header
-import MenuIcon from '@mui/icons-material/Menu';
 import AppBar from '@mui/material/AppBar';
 import Badge from '@mui/material/Badge';
 import Box from '@mui/material/Box';
 import IconButton from '@mui/material/IconButton';
 import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
 
 import MailIcon from '@mui/icons-material/Mail';
 import NotificationsIcon from '@mui/icons-material/Notifications';
-import { Avatar,  useMediaQuery } from '@mui/material';
+import { Avatar, useMediaQuery } from '@mui/material';
 
-import ModeSwitch from './ModeSwitch';
-import { Search } from './Search';
-import AccountMenu from './Menu';
-import Navigations from './Navigations';
 import { List } from '@mui/icons-material';
+import AccountMenu from './Menu';
+import ModeSwitch from './ModeSwitch';
+import Navigations from './Navigations';
+import { Search } from './Search';
 
 
 
@@ -27,7 +25,7 @@ function Header() {
  
 
       <Box sx={{ flexGrow: 1,width:'100%' }}>
-        <AppBar position="static" sx={{ backgroundColor: 'background.default' }}>
+        <AppBar position="static" sx={{ backgroundColor: 'background.bgColor' }}>
           <Toolbar sx={{ display:'flex',alignItems:'center',justifyContent:'space-between'  }}>
             {/* <IconButton
             size="large"

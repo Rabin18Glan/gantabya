@@ -1,10 +1,37 @@
-import { Box, Grid, Typography } from '@mui/material'
-import React from 'react'
+import { Avatar, Box, Grid, List, ListItem, ListItemButton, Typography } from '@mui/material'
 
+
+interface User{
+  photo:string,
+  name:string
+}
 function Right() {
+  const user:User[] =[
+    {
+      photo:'meruna.jpeg',
+      name:'meruna'
+    },
+    {
+      photo:'sabina.webp',
+      name:'Sabina'
+    },
+    {
+      photo:'R (5).jpeg',
+      name:'Rubina'
+    },
+
+  ]
   return (
-    <Grid item xs sx={{  backgroundColor:'background.default',height:'91vh'  }} >
-    <Box sx={{ backgroundColor:'background.default' }}><Typography color={'white'}>sx</Typography></Box>
+    <Grid item xs={3} sx={{padding:'10px',  backgroundColor:'background.default',height:'91vh' }} >
+
+    <List>
+{user.map((user)=>{
+  return <ListItemButton sx={{ display:'flex',gap:'10px' ,borderRadius:'10px'}}><Avatar><img src={user.photo} alt="" /></Avatar><Typography typography={'h6'} color={'whitesmoke'}>{user.name}</Typography></ListItemButton>
+})}
+    </List>
+    
+    
+
   </Grid>
 
   )

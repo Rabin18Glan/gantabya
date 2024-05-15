@@ -1,10 +1,9 @@
-import { BedtimeOutlined, BedtimeRounded, Brightness2Rounded, Brightness7Rounded } from '@mui/icons-material'
-import { Box, IconButton, useMediaQuery } from '@mui/material'
-import React, { useEffect } from 'react'
+import { BedtimeRounded } from '@mui/icons-material'
+import BrightnessHighRoundedIcon from '@mui/icons-material/BrightnessHighRounded'
+import { IconButton, useMediaQuery } from '@mui/material'
+import { useEffect } from 'react'
 import { useAppDispatch, useAppSelector } from '../../store/hooks'
 import { toggle } from '../../store/slices/colorMode'
-import { grey } from '@mui/material/colors'
-import BrightnessHighRoundedIcon from '@mui/icons-material/BrightnessHighRounded';
 
 function ModeSwitch() { 
    const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');

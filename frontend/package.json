@@ -15,6 +15,7 @@
     "@fontsource/roboto": "^5.0.13",
     "@hookform/resolvers": "^3.3.4",
     "@mui/icons-material": "^5.15.17",
+    "@mui/lab": "^5.0.0-alpha.170",
     "@mui/material": "^5.15.17",
     "@mui/styled-engine-sc": "^6.0.0-alpha.18",
     "@reduxjs/toolkit": "^2.2.4",
