@@ -26,7 +26,7 @@ function Right() {
 
     <List>
 {user.map((user)=>{
-  return <ListItemButton sx={{ display:'flex',gap:'10px' ,borderRadius:'10px'}}><Avatar><img src={user.photo} alt="" /></Avatar><Typography typography={'h6'} color={'whitesmoke'}>{user.name}</Typography></ListItemButton>
+  return <ListItemButton sx={{ display:'flex',gap:'10px' ,borderRadius:'10px'}}><Avatar><img src={user.photo} alt="" /></Avatar><Typography fontSize={17} color={'text.primary'}>{user.name}</Typography></ListItemButton>
 })}
     </List>
     

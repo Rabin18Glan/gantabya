@@ -56,7 +56,8 @@ function MainPage() {
 ];
 
   return (<>
-    <Grid  className=' overflow-y-auto '  item xs={6} sx={{ backgroundColor:'background.default',height:'91vh',paddingInline:'100px' }} >
+    <Grid  className=' overflow-y-auto'  item xs={6} sx={{ backgroundColor:'background.default',height:'91vh',paddingInline:'100px' }} >
+
 {posts.map((data)=>{
   return   <Post placeName={data.placeName} 
   photos={data.photos} 

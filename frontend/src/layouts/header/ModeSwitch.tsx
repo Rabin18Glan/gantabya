@@ -1,6 +1,6 @@
 import { BedtimeRounded } from '@mui/icons-material'
 import BrightnessHighRoundedIcon from '@mui/icons-material/BrightnessHighRounded'
-import { IconButton, useMediaQuery } from '@mui/material'
+import { Fab, IconButton, useMediaQuery } from '@mui/material'
 import { useEffect } from 'react'
 import { useAppDispatch, useAppSelector } from '../../store/hooks'
 import { toggle } from '../../store/slices/colorMode'
@@ -24,9 +24,9 @@ const dispatch = useAppDispatch();
   },[prefersDarkMode])
   return (
  
-    <IconButton  onClick={handleSwitch} sx={{ position:'fixed',right:'10px',top:'70px',backgroundColor:'orange',":hover":'background'}}>
+    <Fab  onClick={handleSwitch} sx={{ position:'fixed',right:'10px',top:'70px',backgroundColor:'orange',":hover":{backgroundColor:'blueviolet'}}}>
     {  colorMode=='dark'?<BedtimeRounded sx={{fontSize:'40px',color:'whitesmoke',}}/>:<BrightnessHighRoundedIcon sx={{fontSize:'40px',color:'whitesmoke'}}/>}
-          </IconButton>
+          </Fab>
   )
 }
 
