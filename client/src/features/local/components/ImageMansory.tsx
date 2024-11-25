@@ -1,8 +1,7 @@
-import * as React from 'react';
-import Box from '@mui/material/Box';
-import Paper from '@mui/material/Paper';
 import Masonry from '@mui/lab/Masonry';
+import Paper from '@mui/material/Paper';
 import { styled } from '@mui/material/styles';
+import * as React from 'react';
 import useBreakPointDetector from '../../../hooks/useBreakPointDetector';
 
 const Label = styled(Paper)(({ theme }) => ({
@@ -17,23 +16,30 @@ const Label = styled(Paper)(({ theme }) => ({
 
 export default function ImageMasonry() {
     const {isMd,isSm,isLg,isXl} = useBreakPointDetector();
-
+const [hoveredItem,setHoveredItem] = React.useState<string>();
   return (
     <div className='h-auto overflow-y-auto '>
       <Masonry className=''  columns={isSm?isMd?isLg?isXl?6:5:4:3:2} spacing={2}>
         {itemData.map((item, index) => (
-          <div className='bg-transparent' key={index}>
+          <div onMouseOver={()=>setHoveredItem(item.title)}
+          onMouseOut={()=>setHoveredItem(undefined)}
+          className='bg-transparent relative' key={index}>
           
             <img
               srcSet={`${item.img}`}
               src={`${item.img}`}
               alt={item.title}
               loading="lazy"
-              className=' block rounded-3xl  '
+              className=' block rounded-3xl  hover:opacity-90 '
             
             />
 
-            <div className='hidden hover:block absolute'><button>hello</button></div>
+          {hoveredItem==item.title&&<>
+          <div className='absolute top-0 px-5'>            <h1 className='text-3xl text-shadow-lg text-white '>
+          {item.title}</h1></div>
+          <div className='absolute bottom-0 p-5 w-full flex justify-between'>
+<button className='bg-white text-gray-700 px-5 rounded-lg hover:bg-orange-500 hover:text-white py-2'>More</button>
+            <button className='bg-white text-gray-700 px-5 rounded-lg hover:bg-orange-500 hover:text-white'>Visit</button></div></>}  
           </div>
         ))}
       </Masonry>

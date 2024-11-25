@@ -1,18 +1,26 @@
 import { SortRounded } from '@mui/icons-material'
-import SearchField from '../../components/SearchField'
-import NavigationBar from './NavigationBar'
+import SearchField from '../../components/common/SearchField'
+import NavigationBar from './components/NavigationBar'
 
 
 function Header() {
+
+
+  const handleSearch = ()=>{
+
+  }
   return (
+
+
    <>
-    <div className=' flex flex-col  p-5 pb-0 h-[10vh] md:h-[10vh] md:justify-center md:items-between   bg-gray-100 md:bg-white'>
+    <div className='px-5 flex flex-col   h-[10vh] justify-center items-between   bg-gray-100 md:bg-white'>
       <div className=" flex justify-between items-center"> 
-        <div className="md:flex md:items-center gap-5">
-          <div className='flex items-center'>
+        <div className=" flex items-center gap-5">
+          <div className='flex items-center cursor-pointer'>
             <img className='w-12' src="logo.png" alt="" />
-            <h1 className='text-3xl font-semibold delay-100 duration-200 ease-in animate-pulse font-cursive'>Gantabya</h1></div>
-      <SearchField className='hidden  md:w-10 lg:w-auto md:rounded-xl md:flex md:h-10' handleSearch={()=>{}}/>
+            <h1 className='text-3xl font-semibold delay-100 duration-200 ease-in hover:animate-pulse font-cursive text-shadow-sm'>Gantabya</h1></div>
+            {/* <SearchField handleSearch={handleSearch} /> */}
+      
       </div>
 <div className=''>
       <NavigationBar className='hidden lg:w-[500px] md:w-[50vw]   md:flex md:static md:justify-between  ' />
@@ -25,12 +33,11 @@ function Header() {
        </div>
 
        </div>
-       <SearchField className=' md:hidden mt-3 mx-2' handleSearch={()=>{}} placeholder='Search...' />
-   
+      
    
      </div>
        <NavigationBar className='md:hidden' />
-       <img className='hover:shadow-xl border-black w-20 h-20 fixed bottom-24 rounded-xl shadow-md right-5' src="map.png" alt="" />
+
        </>
   
   )

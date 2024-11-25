@@ -1,15 +1,18 @@
 
 import { RouterProvider } from 'react-router-dom'; // Changed from RouterProvider to BrowserRouter
 import router from './Routes';
+import Form from './features/authentication/components/register/Form';
 
 function App() {
-
-    // Create the theme based on the mode
 
 
     return (
       
-        <div className='bg-white dark:bg-black'><RouterProvider router={router} /></div>
+        <div  className='bg-white dark:bg-black'>
+         
+            <RouterProvider router={router} />
+            {/* <Form /> */}
+            </div>
     );
 }
 

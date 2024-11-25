@@ -1,8 +1,11 @@
-import React from 'react'
 
-function LoginHero() {
+interface LoginHeroProps{
+  className?:string,
+
+}
+function LoginHero({className}:LoginHeroProps) {
   return (
-    <div className='w-1/2 '>LoginHero</div>
+    <div className={` ${className}`}>LoginHero</div>
   )
 }
 

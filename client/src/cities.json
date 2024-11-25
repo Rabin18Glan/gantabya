@@ -1,0 +1,74 @@
+[
+    {
+      "city": "Kathmandu",
+      "latitude": 27.7172,
+      "longitude": 85.3240,
+      "popup": "Kathmandu, the capital city of Nepal"
+    },
+    {
+      "city": "Pokhara",
+      "latitude": 28.2096,
+      "longitude": 83.9856,
+      "popup": "Pokhara, known for its beautiful lakes and mountain views"
+    },
+    {
+      "city": "Lalitpur (Patan)",
+      "latitude": 27.6675,
+      "longitude": 85.3239,
+      "popup": "Lalitpur, also known as Patan, famous for its historic architecture"
+    },
+    {
+      "city": "Bhaktapur",
+      "latitude": 27.6710,
+      "longitude": 85.4298,
+      "popup": "Bhaktapur, renowned for its rich culture and temples"
+    },
+    {
+      "city": "Biratnagar",
+      "latitude": 26.4525,
+      "longitude": 87.2718,
+      "popup": "Biratnagar, an industrial hub in eastern Nepal"
+    },
+    {
+      "city": "Birgunj",
+      "latitude": 27.0000,
+      "longitude": 84.8667,
+      "popup": "Birgunj, a major commercial city in southern Nepal"
+    },
+    {
+      "city": "Janakpur",
+      "latitude": 26.7271,
+      "longitude": 85.9250,
+      "popup": "Janakpur, a city of historical and religious significance"
+    },
+    {
+      "city": "Dharan",
+      "latitude": 26.8126,
+      "longitude": 87.2832,
+      "popup": "Dharan, a vibrant city in eastern Nepal"
+    },
+    {
+      "city": "Hetauda",
+      "latitude": 27.4256,
+      "longitude": 85.0322,
+      "popup": "Hetauda, an important industrial and transport hub"
+    },
+    {
+      "city": "Nepalgunj",
+      "latitude": 28.0500,
+      "longitude": 81.6167,
+      "popup": "Nepalgunj, a gateway to western Nepal"
+    },
+    {
+      "city": "Butwal",
+      "latitude": 27.7000,
+      "longitude": 83.4500,
+      "popup": "Butwal, a bustling city in western Nepal"
+    },
+    {
+      "city": "Dhangadhi",
+      "latitude": 28.6930,
+      "longitude": 80.5935,
+      "popup": "Dhangadhi, a major city in far western Nepal"
+    }
+  ]

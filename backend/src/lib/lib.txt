@@ -1,0 +1,1 @@
+For external library configuration like redis, stripe
