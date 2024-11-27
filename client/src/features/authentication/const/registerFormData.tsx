@@ -3,11 +3,12 @@ import RoleSelection from "../components/register/RoleSelection";
 import ContactInfo from "../components/register/ContactInfo";
 import CreateAccount from "../components/register/CreateAccount";
 import { RegisterFormFields } from "@/schemas/registerSchema";
+import MultiStepFormWrapper from "@/layouts/wrappers/MultiStepFormWrapper";
 
 export interface IRegisterForm {
   title:string,
     form: ReactElement,
-    fields: ("role" | "phoneNumber" | "name" | "email" | "password")[]
+    fields?: ("role" | "phoneNumber" | "name" | "email" | "password")[]
   }
   
  export const REGISTER_FORM_STEPS: IRegisterForm[] = [
@@ -27,6 +28,10 @@ export interface IRegisterForm {
       fields: ["email", "password", "name"]
   
     },
+    {title:'Email Verification',
+     form:<MultiStepFormWrapper ><h1 className="text-xl">Check you email and verify it!</h1></MultiStepFormWrapper>,
+
+    }
   ];
 
 

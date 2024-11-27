@@ -1,14 +1,18 @@
 {
   "compilerOptions": {
-    "target": "ES6",                               
-    "module": "CommonJS",                          
-    "strict": true,                                
-    "esModuleInterop": true,   
-                   
-    "skipLibCheck": true,                         
-    "outDir": "./dist",                           
-    "rootDir": "./src"                            
+    "target": "ES6",
+    "module": "CommonJS",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "outDir": "./dist",
+    "rootDir": "./src"
   },
-  "include": ["src/**/*", "env.d.ts"],                        
-  "exclude": ["node_modules"]                    
+  "include": [
+    "src/**/*",
+    "env.d.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }

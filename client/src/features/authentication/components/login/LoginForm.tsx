@@ -6,15 +6,17 @@ import { SubmitHandler } from 'react-hook-form';
 import { InputField, MyButton } from '../../../../components/common';
 
 //locals
-import { useLoginForm } from '../../hooks/useLoginForm';
-import { handleLoginSubmitData } from '../../services/loginService';
+import { LOGIN_API_URL } from '@/const/apiRoutes';
 import { LoginFormFields } from '@/schemas/loginSchema';
+import { postApiService } from '@/services/postApiService';
+import { useLoginForm } from '../../hooks/useLoginForm';
 
 function LoginForm() {
 const {setError,errors,register,handleSubmit,isSubmitting} = useLoginForm();
 const onSubmit: SubmitHandler<LoginFormFields> = useCallback(async (data) => {
         try {
-           const response = await handleLoginSubmitData(data);
+           const response = await postApiService<LoginFormFields>(data,LOGIN_API_URL);
+           console.log(response)
            
         } catch (err) {
 

@@ -42,7 +42,8 @@ export function useMultistepForm(steps:IRegisterForm[],trigger:UseFormTrigger<Re
      back,
      isFirstStep:currentStepIndex==0,
      isLastStep:currentStepIndex==steps.length-1,
-     stepCount:steps.length
+     stepCount:steps.length,
+     isSecondLastStep:currentStepIndex==steps.length-2
     }
     
 }

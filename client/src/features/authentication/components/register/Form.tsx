@@ -43,7 +43,6 @@ export default function Form() {
   const {
     register,
     handleSubmit,
-  
     reset,
     trigger,
     formState: { errors }

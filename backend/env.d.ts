@@ -15,6 +15,7 @@ declare namespace NodeJS {
       SMTP_FROM: string;
       APP_URL:string;
       JWT_EXPIRES_IN:string;
+      CLIENT_URL:string;
     }
   }
   

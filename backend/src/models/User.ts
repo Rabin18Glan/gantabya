@@ -39,6 +39,15 @@ const userSchema = new Schema<IUser>({
  
 },
  {
+  toJSON:{
+    transform(doc,ret)
+    {
+      delete ret.password;
+      delete ret.__v;
+      delete ret.createdAt;
+      delete ret.updatedAt;
+    }
+  },
   timestamps: true
 });
 
