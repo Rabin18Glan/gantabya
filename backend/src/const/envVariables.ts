@@ -12,6 +12,8 @@ const VERIFY_EMAIL_SECRET = process.env.VERIFY_EMAIL_SECRET!;
 
 const HUNTER_API_KEY = process.env.HUNTER_API_KEY! ;
 
+const NEMOTRON_API_KEY = process.env.NEMOTRON_API_KEY;
+
 const SMTP_HOST:string|undefined =NODE_ENV=='development'?'sandbox.smtp.mailtrap.io':process.env.SMTP_HOST || 'smtp.gmail.com';
 const SMTP_PORT:number|undefined =NODE_ENV=='development'?587: parseInt(process.env.SMTP_PORT!) || 465;
 const SMTP_SECURE:boolean|undefined =NODE_ENV=='development'?false: process.env.SMTP_SECURE=="true"?true:false || true;
@@ -20,6 +22,7 @@ const SMTP_PASS:string|undefined =NODE_ENV=='development'?'f3da0c99e681a2': proc
 const SMTP_FROM:string|undefined = process.env.SMTP_FROM || 'robinjsl321@gmail.com';
 
 export {
+  NEMOTRON_API_KEY,
   PORT,
   APP_URL,
   NODE_ENV,

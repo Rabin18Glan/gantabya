@@ -8,6 +8,9 @@ import authRouter from './routes/userRoutes';
 import vehicleRouter from './routes/vehicleRoutes';
 import { errorHandler } from './middlewares/errorHandlermiddleware';
 
+import chatRouter from './routes/chatRoutes';
+import locationRouter from './routes/postlocation';
+
 // Load environment variables
 dotenv.config();
 
@@ -23,7 +26,7 @@ app.set('env', 'development');
 app.use(express.json({ limit: '100kb' }));
 app.use(express.urlencoded({ extended: true }));
 app.use(cors({
-  origin: 'http://localhost:5173',
+  origin: '*',
   credentials: true,
   methods: ['GET', 'POST', 'DELETE', 'UPDATE'],
 }));
@@ -37,7 +40,7 @@ connectDB();
 // Admin sub-app
 admin.on('mount', (parent) => {
   console.log('Admin app mounted');
-  console.log(parent); // Logs the parent app
+  // console.log(parent); // Logs the parent app
 });
 
 admin.get('/', (req: Request, res: Response): void => {
@@ -48,7 +51,9 @@ app.use('/admin', admin);
 // API Routes Mounting
 mainRouter.use('/user', authRouter);
 mainRouter.use('/vehicle', vehicleRouter);
+mainRouter.use('/chat',chatRouter);
 app.use('/api/v1', mainRouter);
+mainRouter.use('/location-post',locationRouter);
 
 // Root route
 app.get('/', (req: Request, res: Response): void => {

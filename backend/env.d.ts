@@ -16,6 +16,7 @@ declare namespace NodeJS {
       APP_URL:string;
       JWT_EXPIRES_IN:string;
       CLIENT_URL:string;
+      NEMOTRON_API_KEY:string;
     }
   }
   

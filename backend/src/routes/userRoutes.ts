@@ -1,7 +1,9 @@
 import { login,logout,register, resetPassword, verifyEmail } from '../controllers';
 import { Router } from 'express';
-import { authorize } from '../middlewares/authorizemiddleware';
+
 import { userDashboardController } from '../controllers/userDashboardController';
+import { authorize } from '../middlewares/authorizeMiddleware';
+import { chatAIController } from '../controllers/chatControllers/chatAiController';
 
 
 const authRouter = Router();
