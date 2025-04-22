@@ -23,6 +23,7 @@ export class AuthenticationError extends CustomError {
   }
 }
 
+
 export class AuthorizationError extends CustomError {
   constructor(message: string = 'Not authorized') {
     super(message, 403, 'AUTHORIZATION_ERROR');

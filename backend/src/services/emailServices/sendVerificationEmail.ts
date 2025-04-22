@@ -2,7 +2,7 @@ import { APP_URL } from "../../const/envVariables";
 import { sendEmail } from "./sendEmail";
 
 export async function sendVerificationEmail(email: string, token: string): Promise<void> {
-    const verificationLink = `${process.env.CLIENT_URL}/register/verify-email?token=${token}`;
+    const verificationLink = `${process.env.CLIENT_URL}/register/verify-email?verification-token=${token}`;
     console.log(verificationLink)
     
     await sendEmail({

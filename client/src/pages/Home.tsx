@@ -1,8 +1,10 @@
-import React from 'react'
+import { Link } from 'react-router-dom';
 
 function HomePage() {
   return (
-    <div className='bg-white'>HomePage</div>
+    <div className='bg-white'>
+      <Link to='/login' >Get started</Link>
+    </div>
   )
 }
 

@@ -10,16 +10,17 @@ import { generateAuthToken } from "../../services";
 
 export async function login(req: Request, res: Response, next: NextFunction): Promise<void> {
     try {
-      const validatedData = loginSchema.parse(req.body);
-      
-      const user = await User.findOne({ email: validatedData.email }).select('+password');
+      const {email,password}= loginSchema.parse(req.body);
+      console.log(req.body)
+      const user = await User.findOne({ email}).select('+password');;
       if (!user) {
-        throw new AuthenticationError('Invalid credentials');
+        throw new AuthenticationError('Email not found!');
       }
 
-      const isPasswordValid = await user.comparePassword(validatedData.password);
+      console.log(password)
+      const isPasswordValid = await user.comparePassword(password);
       if (!isPasswordValid) {
-        throw new AuthenticationError('Invalid credentials');
+        throw new AuthenticationError('Invalid Password!');
       }
 
       const token = generateAuthToken({
@@ -27,13 +28,13 @@ export async function login(req: Request, res: Response, next: NextFunction): Pr
         role: user.role,
       });
       await user.save();
-
+      
       res.status(200).json({
         success: true,
+        token,
         message: 'Login successful',
-        data: {
+        userData: {
           userId: user._id,
-          token,
           name: user.name,
           email: user.email,
           phoneNumber: user.phoneNumber,

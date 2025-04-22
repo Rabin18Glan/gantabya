@@ -28,7 +28,7 @@ const TravelOptionsButtons: React.FC<Props> = ({ travelOptions, selectedOptions,
               }
             });
           }}
-          className={`shadow-md border-gray-300 hover:shadow-xl hover:shadow-orange-300 hover:bg-blue-100 hover:border-orange-500 ${
+          className={`shadow-md border-accent-foreground bg-background hover:shadow-xl hover:shadow-accent hover:bg-blue-100 hover:border-orange-500 ${
             selectedOptions.includes(option.name) && 'shadow-xl border-orange-400 shadow-orange-300 bg-blue-200'
           } w-16 h-16 border-2 flex justify-between items-center rounded-full`}
         >

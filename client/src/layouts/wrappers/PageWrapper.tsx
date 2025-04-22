@@ -1,8 +1,13 @@
 import { ReactElement } from 'react'
 
-function PageWrapper({ children }: { children: ReactElement }) {
+
+interface IPageWrapperProps{
+    className?:string,
+    children:ReactElement
+}
+function PageWrapper({ children }:IPageWrapperProps) {
     return (
-        <div>{children}</div>
+        <div className='pt-20 px-8 md:px-16 lg:px-36 bg-background'>{children}</div>
     )
 }
 

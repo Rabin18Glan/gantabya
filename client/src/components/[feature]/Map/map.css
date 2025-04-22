@@ -1,0 +1,134 @@
+.map-wrap {
+    position: relative;
+    width: 100%;
+    height: calc(100vh - 77px); /* calculate height of the screen minus the heading */
+  }
+  
+  .map {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+  
+ 
+  input.svelte-bz0zu3{
+    border-radius: 20px;
+    
+    height: 40px;
+    background-color: white;
+  
+    
+    
+  }
+
+  form.svelte-bz0zu3{
+    border-radius: 20px;
+  align-items: center;
+ 
+    
+  }
+
+  input.svelte-bz0zu3:focus{
+    background-color:hsl(var(--background)) ;
+   
+  }
+  .svelte-bz0zu3:hover{
+    border-radius: 20px;
+    background-color:hsl(var(--background)) ;
+  }
+
+  .input-group.svelte-bz0zu3{
+    
+    display: flex;
+    align-items: center;
+  }
+ 
+ 
+  div.maplibregl-ctrl, div.maplibregl-ctrl-group
+  {
+  
+    /* background:transparent; */
+    border-radius: 10px;
+  
+  }
+
+div.maplibregl-ctrl-group:hover{ 
+  box-shadow: 2px 2px 10px 1px hsl(var(--accent));
+    border-radius: 10px;
+  }
+
+
+span.maplibregl-ctrl-icon{
+
+border-radius: 10px;
+
+
+}
+
+
+span.maplibregl-ctrl-icon:focus{
+  
+  background-color: green;
+  border-radius: 10px;
+  
+  
+  }
+  
+
+
+button.maplibregl-ctrl-shrink,button.maplibregl-ctrl-fullscreen,button.maplibregl-ctrl-terrain-disabled,button.maplibregl-ctrl-terrain,button.maplibregl-ctrl-terrain-enabled,button.maplibregl-ctrl-geolocate,button.maplibregl-ctrl-zoom-in,button.maplibregl-ctrl-zoom-out,button.maplibregl-ctrl-compass{
+  background-color: hsl(var(--background));
+  width: 50px;
+  height: 45px;
+  border-radius: 10px;
+
+}
+/* button.maplibregl-ctrl-shrink:hover,button.maplibregl-ctrl-fullscreen:hover,button.maplibregl-ctrl-terrain-disabled:hover,button.maplibregl-ctrl-terrain:hover,button.maplibregl-ctrl-terrain-enabled:hover,button.maplibregl-ctrl-geolocate:hover,button.maplibregl-ctrl-zoom-in:hover,button.maplibregl-ctrl-zoom-out:hover,button.maplibregl-ctrl-compass:hover{
+background-color: green;
+} */
+
+
+button.maplibregl-ctrl-geolocate-active, 
+button.maplibregl-ctrl-terrain-enabled, 
+button.maplibregl-ctrl-shrink {
+  background-color:white;
+  box-shadow: 2px 2px 10px 1px hsl(var(--accent));
+}
+
+
+/*
+button.maplibregl-ctrl-geolocate{
+
+  
+}
+button.maplibregl-ctrl-zoom-in{
+
+  
+}
+button.maplibregl-ctrl-zoom-out{
+ 
+  
+}
+*/
+/* button.maplibregl-ctrl-compass{
+  width: 50px;
+  height: 45px;
+ 
+}  */
+div.maplibregl-ctrl.maplibregl-ctrl-scale
+{
+  width: 70px;
+   
+}
+
+@media screen and (max-width: 600px) {
+  div.maplibregl-ctrl-bottom-right{
+    bottom:40px;
+    right: 10px;
+  
+  }
+  
+}
+
+
+

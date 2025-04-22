@@ -1,5 +1,5 @@
-import { ReactNode } from 'react'
-
+import { ReactNode } from 'react';
+import { } from 'react-icons';
 
 interface MultiStepFormWrapperProps
 {
@@ -9,8 +9,9 @@ interface MultiStepFormWrapperProps
 }
 function MultiStepFormWrapper({children,title}:MultiStepFormWrapperProps) {
   return (
-    <div className='h-screen w-screen flex flex-col justify-center items-center p-10'>
-       {title && <h1 className='absolute top-10 text-4xl font-bold'>{title}</h1>}
+    <div className='h-[60vh] w-full flex flex-col justify-center items-center gap-10 '>
+     
+       {title && <h1 className='text-2xl font-bold'>{title}</h1>}
         <div className='self-center'>
         {children}
         </div>

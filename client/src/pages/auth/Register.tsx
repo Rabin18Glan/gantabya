@@ -1,9 +1,15 @@
+import { PageWrapper } from '@/layouts'
 import RegisterForm from '../../features/authentication/components/register/RegisterForm'
+import withAuth from '@/components/hoc/withAuth'
 
 function Register() {
   return (
-    <div><RegisterForm /></div>
+    <PageWrapper>
+      <RegisterForm />
+    </PageWrapper>
   )
 }
 
-export default Register
+
+const CheckRegister = withAuth(Register);
+export default CheckRegister;

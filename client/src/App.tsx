@@ -1,17 +1,17 @@
 
 import { RouterProvider } from 'react-router-dom'; // Changed from RouterProvider to BrowserRouter
-import router from './Routes';
-import Form from './features/authentication/components/register/Form';
+import { useDarkMode } from './hooks/useDarkMode';
+import {router} from './Routes';
 
 function App() {
-
-
+   useDarkMode();
+ 
     return (
       
         <div  className='bg-white dark:bg-black'>
          
             <RouterProvider router={router} />
-            {/* <Form /> */}
+         
             </div>
     );
 }

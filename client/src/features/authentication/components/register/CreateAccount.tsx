@@ -1,47 +1,48 @@
+import { InputField } from "@/components/common";
 import MultiStepFormWrapper from "@/layouts/wrappers/MultiStepFormWrapper";
+import { RegisterFormFields } from "@/schemas/registerSchema";
 import { useFormContext } from "react-hook-form";
 
 const CreateAccount = () => {
-  const { register, formState: { errors } } = useFormContext();
+  const { register, formState: { errors } } = useFormContext<RegisterFormFields>();
 
   return (
     <MultiStepFormWrapper title="Create an Account">
       <div className="space-y-6">
-        <div className="space-y-2">
-          <label htmlFor="name" className="block text-lg font-semibold text-gray-700">Name</label>
-          <input
+      <InputField
+          label="Enter Name"
             id="name"
             type="text"
-            {...register("name")}
-            className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-            placeholder="Enter your name"
+            register={register("name", {
+              required: "Name is required"
+              
+            })}
+            error={errors.name?.message}
+            placeholder="Name"
           />
-              {errors.name && <p className="text-sm text-red-500">{`${errors.name.message}`}</p>}
-        </div>
-
-        <div className="space-y-2">
-          <label htmlFor="email" className="block text-lg font-semibold text-gray-700">Email</label>
-          <input
+         <InputField
+          label="Enter Email"
             id="email"
             type="email"
-            {...register("email")}
-            className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-            placeholder="Enter your email"
+            register={register("email", {
+              required: "Email is required",
+            })}
+            error={errors.email?.message}
+            placeholder="Email"
           />
-          {errors.email && <p className="text-sm text-red-500">{`${errors.email.message}`}</p>}
-        </div>
-
-        <div className="space-y-2">
-          <label htmlFor="password" className="block text-lg font-semibold text-gray-700">Password</label>
-          <input
+        <InputField
+          label="Enter Password"
             id="password"
             type="password"
-            {...register("password")}
-            className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-            placeholder="Enter your password"
+            register={register("password", {
+              required: "Phone number is required",
+             
+            })}
+            error={errors.password?.message}
+            placeholder="Password"
           />
-          {errors.password && <p className="text-sm text-red-500">{`${errors.password.message}`}</p>}
-        </div>
+
+        
       </div>
     </MultiStepFormWrapper>
   );

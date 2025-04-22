@@ -1,12 +1,18 @@
+import { PageWrapper } from '@/layouts'
 import { LoginForm, LoginHero } from '../../features/authentication'
+import withAuth from '@/components/hoc/withAuth'
 
 function Login() {
   return (
-    <div className="">
+ <PageWrapper>
+  
+     <div className="flex justify-center md:grid md:grid-cols-2 h-screen">
       <LoginForm />
-      <LoginHero  className='hidden'/>
+      <LoginHero className='hidden md:block' />
     </div>
+ </PageWrapper>
   )
 }
 
-export default Login
+const CheckedLogin = withAuth(Login)
+export default CheckedLogin

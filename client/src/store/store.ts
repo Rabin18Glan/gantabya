@@ -1,10 +1,14 @@
 import { configureStore } from "@reduxjs/toolkit";
 import colorMode from "./slices/colorMode";
+import authSlice from "./slices/authSlice";
+import mapSlice from './slices/mapSlice'
 
 
 export const store = configureStore(
     {
         reducer:{
+            auth:authSlice,
+            map:mapSlice,
            
             mode:colorMode
           

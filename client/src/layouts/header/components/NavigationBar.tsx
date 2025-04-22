@@ -1,6 +1,6 @@
-import { useEffect, useState } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
-
+import { FaBus, FaChartColumn, FaPeopleGroup, FaQrcode } from "react-icons/fa6";
+import { FiPackage } from "react-icons/fi";
+import { NavLink } from 'react-router-dom';
 interface Navigation {
   id: number;
   name: string
@@ -9,47 +9,78 @@ interface Navigation {
 
 }
 
-function NavigationBar({ className }: { className?: string }) {
-  const location = useLocation().pathname.slice(1)
-  console.log(location)
-  const [active, setActive] = useState<string>(location ? location : 'global');
-
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    setActive(location)
-  }, [useNavigate])
-
-
-  const navigations: Navigation[] = [{
-    id: 1,
-    name: 'travel',
-    title: 'Travel',
-    icon: <img alt='no image' className='w-10 h-auto object-cover' src='world.png' />
-
-  },
+const navigations: Navigation[] = [
+    
   {
-    id: 2,
-    title: 'Location',
-    name: 'location',
-    icon: <img alt='no image' className='w-10 h-auto object-cover' src='location.png' />
-  },
+  id: 1,
+  name: 'travel',
+  title: 'Travel',
+  icon: <FaBus />
+
+},
+{
+  id: 2,
+  name: 'ride-connect',
+  title: 'Connect',
+  icon: <FaPeopleGroup />
+
+},
+// {
+//   id: 3,
+//   name: 'scan',
+//   title: 'Scan',
+//   icon:<FaQrcode />
+
+// },
+{
+  id: 4,
+  name: 'tour-package',
+  title: 'Packages',
+  icon:<FiPackage />
+
+},
+{
+  id: 5,
+  name: 'dashboard',
+  title: 'Dashboard',
+  icon: <FaChartColumn />
+
+},
 
 
 
-  ]
+
+]
+
+function NavigationBar({ className }: { className?: string }) {
+
+
   return (
-    <div className={` fixed bottom-0 rounded-t-xl flex  shadow-xl md:shadow-none shadow-gray-400 items-center  bg-white w-[100vw] h-[7vh] md:h-12 dark:bg-gray-700 ${className} z-50`} >
-      {navigations.map(navigation => {
-        return <div key={navigation.id} className='flex justify-center items-center w-[25%] md:w-[20%]'><div onClick={() => {
-          navigate(`./${navigation.name}`);
-          setActive(navigation.name)
-        }} className={`${active == navigation.name ? ' md:animate-none  md:translate-y-0  duration-200 bg-white  shadow-inner md:shadow-none shadow-orange-200  translate-y-[-30px] border-[10px] dark:border-black border-transparent md:border-0 md:border-b-2  md:border-orange-400 md:duration-0 md:rounded-none overflow-hidden ' : 'text-gray-700 dark:text-gray-200'} p-3 rounded-full w-20  text-center  md:mt-0`}>{navigation.icon}</div> </div>
-      })}
+    
+<div className='z-50 bg-transparent left-0 fixed bottom-3 w-full  flex items-center justify-around lg:ml-96 lg:static  md:w-[500px] '>
+{
+      navigations.map((navigation,index)=>{
+        const {id,name,title,icon} = navigation;
+        const isQRCode = name=='scan';
+        return <NavLink to={name} className={({isActive,isPending,isTransitioning})=>(`
+          flex gap-1 p-1 rounded-xl  justify-center items-center shadow-lg
+          ${isActive&&'text-accent  bg-background'}
+          ${!isActive&&'bg-gray-100'}
+          ${isPending&&'text-primary'} 
+          ${isTransitioning&&'text-secondary'}
 
+        
+          `)} key={id}>
+            {icon}{!isQRCode&&<span >{title}</span>}
+            </NavLink>
 
-    </div>
+      })
+     }
+</div>
+    
   )
 }
 
 export default NavigationBar
+
+// ${isQRCode&&'z-50  hover:shadow-accent hover:text-accent text-5xl bg-background rounded-full relative bottom-7 p-5 text-foreground shadow-lg shadow-primary md:fixed md:right-10'} 

@@ -1,7 +1,4 @@
 import { NextFunction, Request, Response } from "express";
-
-
-
 import { registerSchema } from "../../validators/authValidator";
 import User from "../../models/User";
 import { ConflictError } from "../../utils/errors.utils";
@@ -44,23 +41,12 @@ export async function register(req: Request, res: Response, next: NextFunction):
 
     await user.save();
 
-    const authToken = generateAuthToken({
-      userId: user._id,
-      role: user.role,
-    });
+    
 
     res.status(201).json({
       success: true,
-      message: 'Registration successful. Please verify your email.',
-      data: {
-        userId: user._id,
-        token: authToken,
-        name: user.name,
-        email: user.email,
-        phoneNumber: user.phoneNumber,
-        role: user.role,
-        verified: user.verified,
-      },
+      message: 'Registration successful. Please verify your email.Check you email!',
+    
     });
   } catch (error) {
     next(error);

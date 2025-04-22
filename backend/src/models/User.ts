@@ -34,6 +34,24 @@ const userSchema = new Schema<IUser>({
     enum: ['passenger', 'driver','admin'],
     required:[true,'Role is a required field']
   },
+verifyToken:{
+  type:String,
+  default:null
+},
+
+  verified:{
+    type:Boolean,
+    default:false
+  },
+
+ resetPasswordCode:{
+  type:String,
+  default:null
+},
+
+ resetPasswordExpires:{
+  type:Date,
+  default:null}
 
   
  
@@ -65,20 +83,9 @@ userSchema.pre<IUser>('save', async function(next) {
 
 // Compare password method
 userSchema.methods.comparePassword = async function(candidatePassword: string): Promise<boolean> {
-  return compare(candidatePassword, this.password);
+  console.log(this.password)
+  return await compare(candidatePassword, this.password);
 };
 
-// // Generate JWT token
-// userSchema.methods.generateAuthToken = function(): string {
-//   return jwt.sign(
-//     {
-//       userId: this._id,
-//       email: this.email,
-//       role: this.role
-//     },
-//     process.env.JWT_SECRET || 'your-secret-key',
-//     { expiresIn: '24h' }
-//   );
-// };
 
 export default model<IUser>('User', userSchema);

@@ -1,47 +1,30 @@
+import { IAuthPayload, IAuthState } from "@/types/auth";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-interface UserData {
-    user_id: string | null;
-    name: string | null;
-    email: string | null;
-}
 
-interface AuthState {
-    token: string | null;
-    status: boolean;
-    userData: UserData;
-}
-const state:AuthState= JSON.parse(localStorage.getItem('auth')||'null');
-
-const initialState: AuthState = {
-    token:state.token,
-    status: false,
-    userData: {
-        user_id: state.userData.user_id,
-        name:state.userData.name,
-        email:state.userData.email
-    }
+const state:IAuthState= JSON.parse(localStorage.getItem('auth')||'null');
+console.log(state)
+const initialState: IAuthState = {
+    token:state&&state.token||undefined,
+    status:state&&state.token?true:false||false,
+    userData:state&&state.userData||undefined
 }
 
 const authSlice = createSlice({
     name: 'auth',
     initialState,
     reducers: {
-        login: (state, action: PayloadAction<{ token: string, userData: UserData }>) => {
-            state.token = action.payload.token;
+        login: (state, action: PayloadAction<IAuthPayload>) => {
+            state.token = action.payload.token; 
             state.status = true;
             state.userData = action.payload.userData;
-            const authData = {token:state.token ,userData:state.userData};
+            const authData = {token:action.payload.token ,userData:action.payload.userData};
             localStorage.setItem('auth',JSON.stringify(authData));
         },
         logout: (state) => {
-            state.token = null;
+            state.token = undefined;
             state.status = false;
-            state.userData = {
-                user_id: null,
-                name: null,
-                email: null,
-            };
+            state.userData = undefined;
             localStorage.removeItem('auth');
         }
     }

@@ -1,3 +1,4 @@
+import { MapStyleVariant, ReferenceMapStyle, StyleSpecification } from "@maptiler/sdk";
 import { LatLng } from "leaflet";
 
 export interface LatLngBounds {
@@ -37,3 +38,17 @@ export interface LatLngBounds {
     properties: Properties;
   }
   
+
+  export interface IMapStyles{
+    name:string;
+    default:string | ReferenceMapStyle,
+    light?:string|MapStyleVariant,
+    dark?:string|MapStyleVariant,
+    pastel?:string|MapStyleVariant,
+    background?:string|MapStyleVariant,
+    lines?:string|MapStyleVariant,
+    lite?:string|MapStyleVariant,
+    night?:string|MapStyleVariant,
+    image:string,
+    
+}
